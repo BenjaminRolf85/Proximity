@@ -1,11 +1,4 @@
-# Don't ignore backend folder!
-# backend/
-
-# But ignore these
-.git
-.gitignore
-*.md
-!backend/*.md
+# Ignore everything except backend
 android/
 ios/
 macos/
@@ -14,11 +7,15 @@ windows/
 test/
 lib/
 web/
-build/
+build/macos/
+build/ios/
+build/android/
+.git
+.gitignore
+*.md
 .dart_tool/
 .flutter-plugins
 .packages
-pubspec.lock
 node_modules/
 .env
 .env.local
