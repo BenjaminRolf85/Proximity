@@ -20,11 +20,12 @@ void main() async {
   final uuid = const Uuid();
 
   // Load environment variables
-  final dbHost = Platform.environment['DB_HOST'] ?? 'localhost';
-  final dbPort = int.parse(Platform.environment['DB_PORT'] ?? '5432');
-  final dbName = Platform.environment['DB_NAME'] ?? 'proximity_social';
-  final dbUser = Platform.environment['DB_USER'] ?? 'postgres';
-  final dbPassword = Platform.environment['DB_PASSWORD'] ?? 'postgres';
+  // Railway uses PGHOST, PGPORT, etc. - support both formats
+  final dbHost = Platform.environment['PGHOST'] ?? Platform.environment['DB_HOST'] ?? 'localhost';
+  final dbPort = int.parse(Platform.environment['PGPORT'] ?? Platform.environment['DB_PORT'] ?? '5432');
+  final dbName = Platform.environment['PGDATABASE'] ?? Platform.environment['DB_NAME'] ?? 'proximity_social';
+  final dbUser = Platform.environment['PGUSER'] ?? Platform.environment['DB_USER'] ?? 'postgres';
+  final dbPassword = Platform.environment['PGPASSWORD'] ?? Platform.environment['DB_PASSWORD'] ?? 'postgres';
   final serverPort = int.parse(Platform.environment['PORT'] ?? '8080');
   final serverHost = Platform.environment['HOST'] ?? '0.0.0.0';
   final jwtSecret = Platform.environment['JWT_SECRET'] ?? 'development_secret_key_min_32_chars';
