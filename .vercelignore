@@ -1,0 +1,17 @@
+# Vercel Ignore
+.dart_tool/
+.packages
+.idea/
+.vscode/
+*.iml
+.DS_Store
+android/
+ios/
+macos/
+linux/
+windows/
+test/
+backend/
+*.md
+!README.md
+
