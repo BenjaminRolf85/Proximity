@@ -5,7 +5,13 @@
 .packages
 .pub-cache/
 .pub/
-build/
+build/macos/
+build/ios/
+build/android/
+build/windows/
+build/linux/
+# Keep build/web for Vercel deployment
+# build/web/
 flutter_*.png
 
 # IDE
